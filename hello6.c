@@ -1,11 +1,11 @@
 //Using SDL and standard IO
-#include<SDL2/SDL.h>
 #include <stdio.h>
 #include<stdint.h>
-#include<SDL/SDL_image.h>
-#include"SDL2/SDL_ttf.h"
 #include<stdlib.h>
+#include<SDL2/SDL.h>
+#include<SDL/SDL_image.h>
 #include<time.h>
+#include"SDL2/SDL_ttf.h"
 
 #define BOOL u32
 #define TRUE 1
@@ -13,8 +13,6 @@
 
 #define true 1
 #define false 0
-
-
 
 //Screen dimension definitions
 #define SCREEN_WIDTH 640
