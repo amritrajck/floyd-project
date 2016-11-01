@@ -207,11 +207,11 @@ int showmenu(){
 	SDL_Color one = { 255, 255, 255, 1 }; 
 	SDL_Color two = { 255, 0, 0, 1 }; 
 
-	intro = Mix_LoadMUS( "intro.mp3" );
+	intro = Mix_LoadMUS( "Essentials/intro.mp3" );
 	Mix_PlayMusic( intro, -0 ); 
 
 	TTF_Font *fontP;
-	fontP = TTF_OpenFont("Pacifico.ttf", 80);
+	fontP = TTF_OpenFont("Essentials/Pacifico.ttf", 80);
 	if( font == NULL ){ 
 		printf("Failed to load font. SDL_TTF Error : %s\n", TTF_GetError());
 	
@@ -220,14 +220,14 @@ int showmenu(){
 	SDL_Surface* menuback;
 	SDL_Texture* menubackground;
 
-	menuback = SDL_LoadBMP("pongmenu.bmp");
+	menuback = IMG_Load ("Essentials/pongmenu.jpg");
 	if(menuback == NULL)
-		printf("Can't Load Surface from pongmenu.bmp. Error: %s\n", SDL_GetError());
+		printf("Can't Load Surface from pongmenu.jpg . Error: %s\n", SDL_GetError());
 		
 
   	menubackground = SDL_CreateTextureFromSurface(sdlRenderer, menuback);
 	if(menubackground == NULL)
-		printf("Can't Load Texture from pongmenu.bmp. Error: %s\n", SDL_GetError());
+		printf("Can't Load Texture from pongmenu.jpg . Error: %s\n", SDL_GetError());
 		
   	
 	SDL_FreeSurface(menuback);
@@ -538,7 +538,7 @@ int main( int argc, char* args[] ) {
 	}
 	
 	//Font Loading
-	font = TTF_OpenFont("times.ttf", 80);
+	font = TTF_OpenFont("Essentials/times.ttf", 80);
 	if( font == NULL ){ 
 		printf("Failed to load font. SDL_TTF Error : %s\n", TTF_GetError());
 	}
@@ -562,9 +562,9 @@ int main( int argc, char* args[] ) {
 		sdlRenderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
 		//Load Music
-		Mix_Chunk *soundEffect = Mix_LoadWAV("coll.wav");
-		Mix_Chunk *wallhit = Mix_LoadWAV("wallhit.wav");
-		Mix_Chunk *ballmiss = Mix_LoadWAV("ballmiss.wav");
+		Mix_Chunk *soundEffect = Mix_LoadWAV("Essentials/coll.wav");
+		Mix_Chunk *wallhit = Mix_LoadWAV("Essentials/wallhit.wav");
+		Mix_Chunk *ballmiss = Mix_LoadWAV("Essentials/ballmiss.wav");
 		
 			
 		//Display Menu
@@ -583,26 +583,26 @@ int main( int argc, char* args[] ) {
 			SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");  // make the scaled rendering look smoother.
 			SDL_RenderSetLogicalSize(sdlRenderer, 640, 480);
 			
-			imageSurface = SDL_LoadBMP("pong.bmp");
+			imageSurface = IMG_Load ("Essentials/pong.jpg");
 			if( imageSurface == NULL){
-				printf( "Unable to load Background Image Into Surface. %s! SDL Error: %s\n", "pong.bmp", SDL_GetError() );
+				printf( "Unable to load Background Image Into Surface. %s! SDL Error: %s\n", "pong.jpg", SDL_GetError() );
 				
 			}
   			background = SDL_CreateTextureFromSurface(sdlRenderer, imageSurface);
   			SDL_FreeSurface(imageSurface);
 		
 			if( background == NULL ) {
-				printf( "Unable to load Background Surface Into Texture. %s! SDL Error: %s\n", "pong.bmp", SDL_GetError() );
+				printf( "Unable to load Background Surface Into Texture. %s! SDL Error: %s\n", "pong.jpg", SDL_GetError() );
 			
 			}
 
 			//Load Spash Image 
-			imageSurface = SDL_LoadBMP( "laser.bmp" );
+			imageSurface = SDL_LoadBMP( "Essentials/laser.bmp" );
 			SDL_SetColorKey( imageSurface, SDL_TRUE, SDL_MapRGB(imageSurface->format, 255, 255, 255) );
 			sdlTexture = SDL_CreateTextureFromSurface(sdlRenderer, imageSurface);
 			SDL_FreeSurface(imageSurface);
 
-			imageSurface = SDL_LoadBMP( "ball.bmp" );
+			imageSurface = SDL_LoadBMP( "Essentials/ball.bmp" );
 			SDL_SetColorKey( imageSurface, SDL_TRUE, SDL_MapRGB(imageSurface->format, 255, 255, 255) );
 			sdlTexture1 = SDL_CreateTextureFromSurface(sdlRenderer, imageSurface);
 			SDL_FreeSurface(imageSurface);
