@@ -1,5 +1,5 @@
 /* <AI Hockey- A classic Pong game>
-    Copyright (C) <2016>  <Amritraj Singh>
+    zzCopyright (C) <2016>  <Amritraj Singh>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -948,7 +948,8 @@ int main( int argc, char* args[] ) {
 				
 				SDL_RenderPresent(sdlRenderer);
 			}
-			
+			SDL_DestroyRenderer(sdlRenderer);
+			SDL_DestroyWindow( win );
 			SDL_Quit();
 		}
 
